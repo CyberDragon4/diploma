@@ -1,0 +1,8 @@
+# OS
+Thumbs.db
+
+# Editor
+.vscode/
+
+# Logs
+*.log

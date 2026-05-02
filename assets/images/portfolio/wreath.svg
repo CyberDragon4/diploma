@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Handmade holiday wreath">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff9f3"/>
+      <stop offset="100%" stop-color="#ffdcbf"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="400" cy="300" r="170" fill="none" stroke="#6aa45a" stroke-width="58"/>
+  <circle cx="400" cy="300" r="120" fill="#fff8ef"/>
+  <circle cx="300" cy="210" r="18" fill="#ff7c56"/>
+  <circle cx="490" cy="216" r="16" fill="#f3a712"/>
+  <circle cx="532" cy="322" r="17" fill="#ff7c56"/>
+  <circle cx="426" cy="414" r="15" fill="#f3a712"/>
+  <circle cx="292" cy="380" r="17" fill="#ff7c56"/>
+  <path d="M330 450 Q400 485 470 450" fill="none" stroke="#c24b2d" stroke-width="16" stroke-linecap="round"/>
+  <path d="M390 448 Q400 475 410 448" fill="none" stroke="#c24b2d" stroke-width="16" stroke-linecap="round"/>
+</svg>

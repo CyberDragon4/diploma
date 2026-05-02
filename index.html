@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Святкова Майстерня</title>
+    <meta
+      name="description"
+      content="Святкова майстерня: декор, подарункові бокси, оформлення подій та тепла атмосфера для ваших свят."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <script>
+      window.SERVICES_PRICES_API = "";
+    </script>
+    <script>
+      window.CONTACT_WORKING_HOURS_API = "";
+    </script>
+    <script src="assets/scripts/main.js" defer></script>
+  </head>
+  <body>
+    <div class="grain"></div>
+
+    <header class="hero">
+      <nav class="top-nav container">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="assets/images/logo-balloon.svg" alt="Логотип Святкова Майстерня" width="28" height="28" />
+          <span>Святкова Майстерня Полтава</span>
+        </a>
+        <div class="top-nav-links">
+          <a class="nav-link is-active" href="index.html#services">Послуги</a>
+          <a class="nav-link" href="portfolio.html">Портфоліо</a>
+          <button class="nav-btn" data-scroll="#contact">Зв'язатись</button>
+        </div>
+      </nav>
+
+      <div class="hero-content container reveal">
+        <p class="badge">Професіонали у поширенні щастя</p>
+        <h1>Створюємо моменти, які хочеться згадувати</h1>
+        <p class="subtitle">
+          Декор подій, подарункові набори та авторські святкові композиції.
+        </p>
+      </div>
+
+      <div class="decor decor-a" aria-hidden="true"></div>
+      <div class="decor decor-b" aria-hidden="true"></div>
+      <div class="decor decor-c" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <section id="services" class="section alt reveal">
+        <div class="container">
+          <h2>Що ми робимо</h2>
+          <p class="subtitle section-intro">
+            Допомагаємо оформити свято під ключ: від ідеї та ескізів до монтажу та фінальних деталей.
+          </p>
+          <div class="cards">
+            <article class="card" data-service-id="event-design" data-default-price="3500">
+              <div class="card-head">
+                <h3>Оформлення подій</h3>
+                <span class="service-price" data-service-price>3 500 грн</span>
+              </div>
+              <p>Весілля, дні народження, корпоративи, дитячі свята.</p>
+            </article>
+            <article class="card" data-service-id="gift-boxes" data-default-price="1450">
+              <div class="card-head">
+                <h3>Подарункові бокси</h3>
+                <span class="service-price" data-service-price>1 450 грн</span>
+              </div>
+              <p>Індивідуальні набори з урахуванням ваших побажань.</p>
+            </article>
+            <article class="card" data-service-id="holiday-decor" data-default-price="2800">
+              <div class="card-head">
+                <h3>Святковий декор</h3>
+                <span class="service-price" data-service-price>2 800 грн</span>
+              </div>
+              <p>Фотозони, композиції, елементи для дому та бізнесу.</p>
+            </article>
+          </div>
+
+          <div class="service-layout">
+            <article class="service-panel">
+              <h3>Пакети послуг</h3>
+              <div class="package-list">
+                <section class="package-item" data-service-id="package-basic" data-default-price="4900">
+                  <div class="package-head">
+                    <h4>Базовий</h4>
+                    <span class="service-price" data-service-price>4 900 грн</span>
+                  </div>
+                  <p>Невелика подія або домашнє свято.</p>
+                  <ul>
+                    <li>Концепція та підбір палітри</li>
+                    <li>2-3 декоративні зони</li>
+                    <li>Пакування подарунків</li>
+                  </ul>
+                </section>
+                <section class="package-item" data-service-id="package-standard" data-default-price="9200">
+                  <div class="package-head">
+                    <h4>Стандарт</h4>
+                    <span class="service-price" data-service-price>9 200 грн</span>
+                  </div>
+                  <p>Оптимально для більшості форматів.</p>
+                  <ul>
+                    <li>Повне оформлення локації</li>
+                    <li>Фотозона та стіл гостей</li>
+                    <li>Монтаж і демонтаж</li>
+                  </ul>
+                </section>
+                <section class="package-item" data-service-id="package-premium" data-default-price="16800">
+                  <div class="package-head">
+                    <h4>Преміум</h4>
+                    <span class="service-price" data-service-price>16 800 грн</span>
+                  </div>
+                  <p>Для масштабних івентів та брендових подій.</p>
+                  <ul>
+                    <li>Індивідуальний декор під бренд</li>
+                    <li>Авторські композиції та спецелементи</li>
+                    <li>Супровід команди на локації</li>
+                  </ul>
+                </section>
+              </div>
+            </article>
+
+            <article class="service-panel">
+              <h3>Як ми працюємо</h3>
+              <ol class="timeline">
+                <li>
+                  <strong>Бриф</strong>
+                  <p>Уточнюємо формат події, бюджет, стиль та дедлайни.</p>
+                </li>
+                <li>
+                  <strong>Концепція</strong>
+                  <p>Формуємо moodboard, матеріали та попередній кошторис.</p>
+                </li>
+                <li>
+                  <strong>Виробництво</strong>
+                  <p>Готуємо декор, подарункові набори та персоналізацію.</p>
+                </li>
+                <li>
+                  <strong>Монтаж</strong>
+                  <p>Оформлюємо простір і перевіряємо фінальний вигляд перед стартом.</p>
+                </li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container reveal">
+        <h2>Питання та відповіді</h2>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>За скільки до події краще звертатися?</summary>
+            <p>Найкраще за 2-4 тижні. Для великих івентів радимо бронювати дату заздалегідь.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Чи працюєте по своєму дизайну клієнта?</summary>
+            <p>Так, можемо реалізувати ваш ескіз або адаптувати його під локацію та бюджет.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Чи є виїзд за межі міста?</summary>
+            <p>Так, виїжджаємо по області та в інші міста за попереднім погодженням.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact" class="section container reveal">
+        <h2>Контакти</h2>
+        <div class="contact">
+          <p><strong>Телефон:</strong> +380 (00) 000 00 00</p>
+          <p><strong>Email:</strong> shop@shop.ua</p>
+          <p><strong>Instagram:</strong> @instagram</p>
+          <p>
+            <strong>Години роботи:</strong>
+            <span data-working-hours data-default-working-hours="Пн-Нд: 10:00-19:00">Пн-Нд: 10:00-19:00</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Святкова Майстерня - Микитенко. Усі права захищено.</p>
+      </div>
+    </footer>
+  </body>
+</html>
