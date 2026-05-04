@@ -242,3 +242,77 @@ async function loadWorkingHours() {
 }
 
 loadWorkingHours();
+
+
+// --- Authorization logic ---
+const authToggleBtn = document.getElementById("authToggleBtn");
+const authDropdown = document.getElementById("authDropdown");
+const loginForm = document.getElementById("loginForm");
+const resetForm = document.getElementById("resetForm");
+const showResetFormBtn = document.getElementById("showResetFormBtn");
+const showLoginFormBtn = document.getElementById("showLoginFormBtn");
+const authError = document.getElementById("authError");
+const resetMessage = document.getElementById("resetMessage");
+
+authToggleBtn?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  authDropdown.classList.toggle("is-open");
+});
+
+document.addEventListener("click", (e) => {
+  if (authDropdown && !authDropdown.contains(e.target) && !authToggleBtn.contains(e.target)) {
+    authDropdown.classList.remove("is-open");
+    setTimeout(() => {
+      loginForm.style.display = "flex";
+      resetForm.style.display = "none";
+      authError.style.display = "none";
+      resetMessage.style.display = "none";
+    }, 300);
+  }
+});
+
+showResetFormBtn?.addEventListener("click", () => {
+  loginForm.style.display = "none";
+  resetForm.style.display = "flex";
+  authError.style.display = "none";
+});
+
+showLoginFormBtn?.addEventListener("click", () => {
+  resetForm.style.display = "none";
+  loginForm.style.display = "flex";
+  resetMessage.style.display = "none";
+});
+
+loginForm?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  authError.style.display = "none";
+  const email = document.getElementById("adminEmail").value;
+  const password = document.getElementById("adminPassword").value;
+
+  const { error } = await window.loginAdmin(email, password);
+
+  if (error) {
+    authError.style.color = "#d9534f";
+    authError.textContent = "Невірний email або пароль";
+    authError.style.display = "block";
+  } else {
+    window.location.href = "admin.html";
+  }
+});
+
+resetForm?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  resetMessage.style.display = "none";
+  const email = document.getElementById("resetEmail").value;
+
+  const { error } = await window.resetAdminPassword(email);
+
+  if (error) {
+    resetMessage.style.color = "#d9534f";
+    resetMessage.textContent = error.message;
+  } else {
+    resetMessage.style.color = "var(--accent)";
+    resetMessage.textContent = "Лист надіслано на вашу пошту";
+  }
+  resetMessage.style.display = "block";
+});

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Панель адміністратора | Святкова Майстерня</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <style>
+        body {
+            background: var(--surface-alt);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #ffffff;
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-logo {
+            font-family: "Comfortaa", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-warm);
+            margin-bottom: 2.5rem;
+            text-decoration: none;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            text-align: left;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--muted);
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            background: rgba(47, 127, 135, 0.05);
+            color: var(--text);
+        }
+
+        .tab-btn.is-active {
+            background: rgba(47, 127, 135, 0.1);
+            color: var(--accent);
+            font-weight: 700;
+            border-color: rgba(47, 127, 135, 0.2);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 3rem 4rem;
+            overflow-y: auto;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.is-active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .logout-btn {
+            background: transparent;
+            border: 1px solid rgba(217, 83, 79, 0.3);
+            color: #d9534f;
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .logout-btn:hover {
+            background: #d9534f;
+            color: #fff;
+        }
+
+        #loadingOverlay {
+            position: fixed;
+            inset: 0;
+            background: var(--surface);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-family: "Comfortaa", sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/scripts/api.js" defer></script>
+    <script src="assets/scripts/admin.js" defer></script>
+</head>
+
+<body>
+    <div id="loadingOverlay">Перевірка доступу...</div>
+
+    <aside class="sidebar">
+        <a href="index.html" class="sidebar-logo">Святкова Майстерня</a>
+        <nav class="nav-tabs">
+            <button class="tab-btn is-active" data-target="schedulePane">Графік роботи</button>
+            <button class="tab-btn" data-target="servicesPane">Послуги та ціни</button>
+            <button class="tab-btn" data-target="adminsPane">Керування адмінами</button>
+        </nav>
+        <button id="logoutBtn" class="logout-btn">Вийти з акаунту</button>
+    </aside>
+
+    <main class="main-content">
+        <div id="schedulePane" class="tab-pane is-active">
+            <h2>Графік роботи</h2>
+            <p class="subtitle">Налаштування робочих годин агенції.</p>
+        </div>
+
+        <div id="servicesPane" class="tab-pane">
+            <h2>Послуги та ціни</h2>
+            <p class="subtitle">Управління переліком послуг на головній сторінці.</p>
+        </div>
+
+        <div id="adminsPane" class="tab-pane">
+            <h2>Керування адмінами</h2>
+            <p class="subtitle">Створення нових адміністраторів.</p>
+        </div>
+    </main>
+</body>
+
+</html>
