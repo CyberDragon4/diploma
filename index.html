@@ -86,70 +86,13 @@
         <p class="subtitle section-intro">
           Допомагаємо оформити свято під ключ: від ідеї та ескізів до монтажу та фінальних деталей.
         </p>
-        <div class="cards">
-          <article class="card" data-service-id="event-design" data-default-price="3500">
-            <div class="card-head">
-              <h3>Оформлення подій</h3>
-              <span class="service-price" data-service-price>3 500 грн</span>
-            </div>
-            <p>Весілля, дні народження, корпоративи, дитячі свята.</p>
-          </article>
-          <article class="card" data-service-id="gift-boxes" data-default-price="1450">
-            <div class="card-head">
-              <h3>Подарункові бокси</h3>
-              <span class="service-price" data-service-price>1 450 грн</span>
-            </div>
-            <p>Індивідуальні набори з урахуванням ваших побажань.</p>
-          </article>
-          <article class="card" data-service-id="holiday-decor" data-default-price="2800">
-            <div class="card-head">
-              <h3>Святковий декор</h3>
-              <span class="service-price" data-service-price>2 800 грн</span>
-            </div>
-            <p>Фотозони, композиції, елементи для дому та бізнесу.</p>
-          </article>
+        <div class="cards" id="services-container">
         </div>
 
         <div class="service-layout">
           <article class="service-panel">
             <h3>Пакети послуг</h3>
-            <div class="package-list">
-              <section class="package-item" data-service-id="package-basic" data-default-price="4900">
-                <div class="package-head">
-                  <h4>Базовий</h4>
-                  <span class="service-price" data-service-price>4 900 грн</span>
-                </div>
-                <p>Невелика подія або домашнє свято.</p>
-                <ul>
-                  <li>Концепція та підбір палітри</li>
-                  <li>2-3 декоративні зони</li>
-                  <li>Пакування подарунків</li>
-                </ul>
-              </section>
-              <section class="package-item" data-service-id="package-standard" data-default-price="9200">
-                <div class="package-head">
-                  <h4>Стандарт</h4>
-                  <span class="service-price" data-service-price>9 200 грн</span>
-                </div>
-                <p>Оптимально для більшості форматів.</p>
-                <ul>
-                  <li>Повне оформлення локації</li>
-                  <li>Фотозона та стіл гостей</li>
-                  <li>Монтаж і демонтаж</li>
-                </ul>
-              </section>
-              <section class="package-item" data-service-id="package-premium" data-default-price="16800">
-                <div class="package-head">
-                  <h4>Преміум</h4>
-                  <span class="service-price" data-service-price>16 800 грн</span>
-                </div>
-                <p>Для масштабних івентів та брендових подій.</p>
-                <ul>
-                  <li>Індивідуальний декор під бренд</li>
-                  <li>Авторські композиції та спецелементи</li>
-                  <li>Супровід команди на локації</li>
-                </ul>
-              </section>
+            <div class="package-list" id="packages-container">
             </div>
           </article>
 
@@ -204,7 +147,7 @@
         <p><strong>Instagram:</strong> @instagram</p>
         <p>
           <strong>Години роботи:</strong>
-          <span data-working-hours data-default-working-hours="Пн-Нд: 10:00-19:00">Пн-Нд: 10:00-19:00</span>
+          <span id="display-working-hours">Завантаження...</span>
         </p>
       </div>
     </section>

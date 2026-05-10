@@ -1,106 +1,89 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Портфоліо виробів | Святкова Майстерня</title>
-    <meta
-      name="description"
-      content="Портфоліо ручних виробів святкової майстерні: подарункові бокси, свічки, декор та авторські композиції."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/styles/main.css" />
-    <script>
-      window.PORTFOLIO_PRICES_API = "";
-    </script>
-    <script src="assets/scripts/main.js" defer></script>
-  </head>
-  <body>
-    <div class="grain"></div>
 
-    <header class="hero portfolio-hero">
-      <nav class="top-nav container">
-        <a class="brand" href="index.html">
-          <img class="brand-logo" src="assets/images/logo-balloon.svg" alt="Логотип Святкова Майстерня" width="28" height="28" />
-          <span>Святкова Майстерня</span>
-        </a>
-        <div class="top-nav-links">
-          <a class="nav-link" href="index.html#services">Послуги</a>
-          <a class="nav-link is-active" href="portfolio.html">Портфоліо</a>
-          <a class="nav-btn" href="index.html#contact">Зв'язатись</a>
-        </div>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфоліо виробів | Святкова Майстерня</title>
+  <meta name="description"
+    content="Портфоліо ручних виробів святкової майстерні: подарункові бокси, свічки, декор та авторські композиції." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/scripts/api.js" defer></script>
+  <script src="assets/scripts/main.js" defer></script>
+</head>
 
-      <div class="hero-content container reveal">
-        <p class="badge">Святкова майстерня</p>
-        <h1>Створюємо моменти, які хочеться згадувати</h1>
-        <p class="subtitle">Декор подій, подарункові набори та авторські святкові композиції.</p>
-      </div>
+<body>
+  <div class="grain"></div>
 
-      <div class="decor decor-a" aria-hidden="true"></div>
-      <div class="decor decor-b" aria-hidden="true"></div>
-      <div class="decor decor-c" aria-hidden="true"></div>
-    </header>
+  <header class="hero portfolio-hero">
+    <nav class="top-nav container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/images/logo-balloon.svg" alt="Логотип Святкова Майстерня" width="28"
+          height="28" />
+        <span>Святкова Майстерня</span>
+      </a>
+      <div class="top-nav-links">
+        <a class="nav-link" href="index.html#services">Послуги</a>
+        <a class="nav-link is-active" href="portfolio.html">Портфоліо</a>
+        <a class="nav-btn" href="index.html#contact">Зв'язатись</a>
+        <div class="auth-dropdown-wrapper">
+          <button class="nav-btn auth-toggle-btn" id="authToggleBtn">Увійти</button>
 
-    <section id="portfolio" class="section alt reveal">
-      <div class="container">
-        <h2>Тепла естетика в деталях</h2>
-        <div class="showcase">
-          <figure class="tile" data-product-id="gift-box" data-default-price="1450">
-            <img src="assets/images/portfolio/gift-box.svg" alt="Подарунковий бокс ручної роботи" loading="lazy" />
-            <figcaption>
-              <span class="tile-title">Подарунковий бокс</span>
-              <span class="tile-price" data-price>1 450 грн</span>
-            </figcaption>
-          </figure>
-          <figure class="tile" data-product-id="soy-candle" data-default-price="420">
-            <img src="assets/images/portfolio/soy-candle.svg" alt="Соєва свічка ручної роботи" loading="lazy" />
-            <figcaption>
-              <span class="tile-title">Соєва свічка</span>
-              <span class="tile-price" data-price>420 грн</span>
-            </figcaption>
-          </figure>
-          <figure class="tile" data-product-id="macrame" data-default-price="980">
-            <img src="assets/images/portfolio/macrame.svg" alt="Макраме декор ручної роботи" loading="lazy" />
-            <figcaption>
-              <span class="tile-title">Макраме декор</span>
-              <span class="tile-price" data-price>980 грн</span>
-            </figcaption>
-          </figure>
-          <figure class="tile" data-product-id="ceramic-mug" data-default-price="520">
-            <img src="assets/images/portfolio/ceramic-mug.svg" alt="Керамічна чашка ручної роботи" loading="lazy" />
-            <figcaption>
-              <span class="tile-title">Керамічна чашка</span>
-              <span class="tile-price" data-price>520 грн</span>
-            </figcaption>
-          </figure>
-          <figure class="tile" data-product-id="wreath" data-default-price="1150">
-            <img src="assets/images/portfolio/wreath.svg" alt="Святковий вінок ручної роботи" loading="lazy" />
-            <figcaption>
-              <span class="tile-title">Святковий вінок</span>
-              <span class="tile-price" data-price>1 150 грн</span>
-            </figcaption>
-          </figure>
-          <figure class="tile" data-product-id="embroidery-hoop" data-default-price="760">
-            <img src="assets/images/portfolio/embroidery-hoop.svg" alt="Вишивка в п'яльцях ручної роботи" loading="lazy" />
-            <figcaption>
-              <span class="tile-title">Вишивка в п'яльцях</span>
-              <span class="tile-price" data-price>760 грн</span>
-            </figcaption>
-          </figure>
+          <div class="auth-dropdown" id="authDropdown">
+            <!-- Login -->
+            <form id="loginForm" class="auth-form">
+              <input type="email" id="adminEmail" placeholder="Email" required class="auth-input">
+              <input type="password" id="adminPassword" placeholder="Пароль" required class="auth-input">
+              <button type="submit" class="btn primary auth-submit">Логін</button>
+              <button type="button" class="btn-text" id="showResetFormBtn">Забули пароль?</button>
+              <p id="authError" class="auth-error"></p>
+            </form>
+
+            <!-- Reset Password -->
+            <form id="resetForm" class="auth-form" style="display: none;">
+              <p style="font-size: 0.85rem; margin: 0 0 0.2rem; color: var(--muted); text-align: center;">Введіть email
+                для скидання:</p>
+              <input type="email" id="resetEmail" placeholder="Email" required class="auth-input">
+              <button type="submit" class="btn primary auth-submit">Відновити</button>
+              <button type="button" class="btn-text" id="showLoginFormBtn">Повернутися до входу</button>
+              <p id="resetMessage" class="auth-error"></p>
+            </form>
+          </div>
+
         </div>
       </div>
-    </section>
+    </nav>
 
-    <footer class="footer">
-      <div class="container">
-        <p>© 2026 Святкова Майстерня. Усі права захищено.</p>
+    <div class="hero-content container reveal">
+      <p class="badge">Святкова майстерня</p>
+      <h1>Створюємо моменти, які хочеться згадувати</h1>
+      <p class="subtitle">Декор подій, подарункові набори та авторські святкові композиції.</p>
+    </div>
+
+    <div class="decor decor-a" aria-hidden="true"></div>
+    <div class="decor decor-b" aria-hidden="true"></div>
+    <div class="decor decor-c" aria-hidden="true"></div>
+  </header>
+
+  <section id="portfolio" class="section alt reveal">
+    <div class="container">
+      <h2>Тепла естетика в деталях</h2>
+      <div class="showcase" id="portfolio-container">
       </div>
-    </footer>
-  </body>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Святкова Майстерня. Усі права захищено.</p>
+    </div>
+  </footer>
+</body>
+
 </html>

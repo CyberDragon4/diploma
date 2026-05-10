@@ -99,6 +99,95 @@
             color: #fff;
         }
 
+        .admin-form {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            max-width: 700px;
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .admin-form label {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .service-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .service-row:last-child {
+            border-bottom: none;
+        }
+
+        .service-row input {
+            width: 100%;
+        }
+
+        /* Нові стилі для карток послуг */
+        .service-card {
+            background: #fdfdfd;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            position: relative;
+        }
+
+        .service-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-card-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .service-img-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .preview-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #eee;
+        }
+
+        .status-msg {
+            font-size: 0.9rem;
+            margin: 0;
+            display: none;
+        }
+
+        .status-msg.success {
+            color: #2f7f87;
+            display: block;
+        }
+
+        .status-msg.error {
+            color: #d9534f;
+            display: block;
+        }
+
         #loadingOverlay {
             position: fixed;
             inset: 0;
@@ -146,16 +235,43 @@
         <div id="schedulePane" class="tab-pane is-active">
             <h2>Графік роботи</h2>
             <p class="subtitle">Налаштування робочих годин агенції.</p>
+            <form id="scheduleForm" class="admin-form">
+                <div id="scheduleList">
+                    <p style="color: var(--muted)">Завантаження графіка...</p>
+                </div>
+                <button type="submit" class="btn primary">Зберегти графік</button>
+                <p id="scheduleStatus" class="status-msg"></p>
+            </form>
         </div>
 
         <div id="servicesPane" class="tab-pane">
             <h2>Послуги та ціни</h2>
-            <p class="subtitle">Управління переліком послуг на головній сторінці.</p>
+            <p class="subtitle">Управління послугами. Для створення пакета просто додайте слово "Пакет" у назву.</p>
+            <form id="servicesForm" class="admin-form"
+                style="max-width: 800px; background: transparent; border: none; padding: 0;">
+                <div id="servicesList" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <p style="color: var(--muted)">Завантаження...</p>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button type="button" id="addServiceBtn" class="btn ghost">+ Додати послугу</button>
+                    <button type="submit" class="btn primary">Зберегти всі зміни</button>
+                </div>
+                <p id="servicesStatus" class="status-msg"></p>
+            </form>
         </div>
 
         <div id="adminsPane" class="tab-pane">
             <h2>Керування адмінами</h2>
-            <p class="subtitle">Створення нових адміністраторів.</p>
+            <p class="subtitle">Створення нових адміністраторів для доступу до панелі.</p>
+            <form id="addAdminForm" class="admin-form" style="max-width: 400px;">
+                <label for="newAdminEmail">Електронна пошта:</label>
+                <input type="email" id="newAdminEmail" class="auth-input" placeholder="admin@example.com" required>
+                <label for="newAdminPassword">Пароль (мінімум 6 символів):</label>
+                <input type="password" id="newAdminPassword" class="auth-input" placeholder="******" required
+                    minlength="6">
+                <button type="submit" class="btn primary">Створити акаунт</button>
+                <p id="adminStatus" class="status-msg"></p>
+            </form>
         </div>
     </main>
 </body>
